@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p><h1>Symptoms</h1></p>
+<hr>
+
+ <% @entries.each do |entry| %>
+ <div><h3><%= entry.created_at.strftime("%b %d, %Y") %></h3></div>
+  <div><p><h4>severe fatigue</h4></p><p><%= entry.symptom1 %></p></div>
+  <div><p><h4>mood changes</h4></p><p><%= entry.symptom2 %></p></div>
+  <div><p><h4>emotional sensitivity</h4></p><p><%= entry.symptom3 %></p></div>
+  <div><p><h4>difficulty concentrating</h4></p><p><%= entry.symptom4 %></p></div>
+   <div><p><h4>headaches</h4></p><p><%= entry.symptom5 %></p></div>
+    <div><p><h4>backache</h4></p><p><%= entry.symptom6 %></p></div>
+    <%= link_to 'Show', entry, class: "btn btn-link" %> |
+        <%= link_to 'Edit', edit_entry_path(entry), class: "btn btn-link" %> |
+        <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+  <% end %>
+ 
+ 
+<br>
+
+<%= link_to 'New Daily Symptoms Tracker Entry', new_entry_path %>

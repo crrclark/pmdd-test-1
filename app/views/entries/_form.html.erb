@@ -1,0 +1,41 @@
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% @entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <h4> <%= f.label "severe fatigue" %></h4>
+     <%= f.range_field :symptom1, :in => 0..10, :step => '1', class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <h4><%= f.label "mood changes" %></h4>
+    <%= f.range_field :symptom2, :in => 0..10, :step => '1', class: "form-control" %>
+  </div>
+  <div class="form-group">
+     <h4><%= f.label "emotional sensitivity" %></h4><br>
+    <%= f.range_field :symptom3, :in => 0..10, :step => '1', class: "form-control" %>
+  </div>
+  <div class="form-group">
+   <h4><%= f.label "difficulty concentrating" %></h4>
+    <%= f.range_field :symptom4, :in => 0..10, :step => '1', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <h4><%= f.label "headaches" %></h4>
+    <%= f.range_field :symptom5, :in => 0..10, :step => '1', class: "form-control" %>
+  </div>
+  <div class="form-group">
+     <h4><%= f.label "backache" %></h4>
+    <%= f.range_field :symptom6, :in => 0..10, :step => '1', class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

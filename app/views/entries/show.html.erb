@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>severe fatigue:</strong>
+  <%= @entry.symptom1 %>
+</p>
+
+<p>
+  <strong>mood changes:</strong>
+  <%= @entry.symptom2 %>
+</p>
+
+<p>
+  <strong>Symptom3:</strong>
+  <%= @entry.symptom3 %>
+</p>
+
+<p>
+  <strong>Symptom4:</strong>
+  <%= @entry.symptom4 %>
+</p>
+
+<p>
+  <strong>Symptom5:</strong>
+  <%= @entry.symptom5 %>
+</p>
+
+<p>
+  <strong>Symptom6:</strong>
+  <%= @entry.symptom6 %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-link" %> |
+<%= link_to 'Back', entries_path, class: "btn btn-link" %>
